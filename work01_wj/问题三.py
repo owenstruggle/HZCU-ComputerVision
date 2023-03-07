@@ -45,9 +45,9 @@ if __name__ == '__main__':
     rgb_lwpImg = cv2.imread("./img/SnowGirl.jpg")
     hsi_lwpImg = rgbtohsi(rgb_lwpImg)
 
-    img_H = hsi_lwpImg * [1, 0, 0]
-    img_S = hsi_lwpImg * [0, 1, 0]
-    img_I = hsi_lwpImg * [0, 0, 1]
+    img_H = hsi_lwpImg[:, :, 0]
+    img_S = hsi_lwpImg[:, :, 1]
+    img_I = hsi_lwpImg[:, :, 2]
 
     plt.subplot(2, 3, 1)
     plt.imshow(rgb_lwpImg[..., ::-1])
@@ -56,12 +56,12 @@ if __name__ == '__main__':
     plt.imshow(hsi_lwpImg)
     plt.axis('off')
     plt.subplot(2, 3, 3)
-    plt.imshow(img_H)
+    plt.imshow(img_H, cmap='gray')
     plt.axis('off')
     plt.subplot(2, 3, 4)
-    plt.imshow(img_S)
+    plt.imshow(img_S, cmap='gray')
     plt.axis('off')
     plt.subplot(2, 3, 5)
-    plt.imshow(img_I)
+    plt.imshow(img_I, cmap='gray')
     plt.axis('off')
     plt.show()
