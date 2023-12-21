@@ -1,3 +1,3 @@
 # Computer Vision
 
-这是 ZUCC 计算机视觉♂的个人日常作业
+这是 浙大城市学院（HZCU） 计算机视觉 日常作业
